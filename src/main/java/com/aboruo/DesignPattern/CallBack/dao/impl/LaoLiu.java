@@ -2,7 +2,7 @@ package com.aboruo.DesignPattern.CallBack.dao.impl;
 
 import com.aboruo.DesignPattern.CallBack.dao.CallBack;
 
-public class LiuHongJie implements CallBack {
+public class LaoLiu implements CallBack {
 	private String name;
 	public String getName() {
 		return name;
@@ -17,7 +17,7 @@ public class LiuHongJie implements CallBack {
 	public void setLaohu(LaoHu laohu) {
 		this.laohu = laohu;
 	}
-	public LiuHongJie(String name,LaoHu laoHu){
+	public LaoLiu(String name,LaoHu laoHu){
 		this.name = name;
 		this.laohu = laoHu;
 	}
@@ -26,9 +26,9 @@ public class LiuHongJie implements CallBack {
 			@Override
 			public void run() {
 				/**
-				 * 宏杰向老胡要岛国小照片
+				 * liu向hu要岛国小照片
 				 */
-				laohu.giveMeSomeGifPic(LiuHongJie.this, gifInfo);
+				laohu.giveMeSomeGifPic(LaoLiu.this, gifInfo);
 			}
 		}).start();
 		try {
