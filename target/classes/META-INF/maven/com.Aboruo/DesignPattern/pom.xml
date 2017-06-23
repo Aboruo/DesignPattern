@@ -13,6 +13,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.11</junit.version>
+    <mysql.version>5.1.39</mysql.version>
+    <fastjson.version>1.2.17</fastjson.version>
   </properties>
 
   <dependencies>
@@ -22,6 +24,16 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>${fastjson.version}</version>
+	</dependency>
   </dependencies>
   <build>
     <pluginManagement>
