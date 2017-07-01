@@ -15,6 +15,7 @@
     <junit.version>4.11</junit.version>
     <mysql.version>5.1.39</mysql.version>
     <fastjson.version>1.2.17</fastjson.version>
+    <disruptor.version>3.3.6</disruptor.version>
   </properties>
 
   <dependencies>
@@ -34,6 +35,12 @@
 	    <artifactId>fastjson</artifactId>
 	    <version>${fastjson.version}</version>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+	<dependency>
+	    <groupId>com.lmax</groupId>
+	    <artifactId>disruptor</artifactId>
+	    <version>${disruptor.version}</version>
+	</dependency>	
   </dependencies>
   <build>
     <pluginManagement>
