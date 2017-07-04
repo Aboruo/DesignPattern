@@ -61,7 +61,6 @@ public class QueueLearn {
 				QueueElement queueElement = blockingQueue2.take();
 				System.out.println(queueElement);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
