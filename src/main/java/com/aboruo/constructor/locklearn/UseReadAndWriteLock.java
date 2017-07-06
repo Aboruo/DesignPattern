@@ -75,6 +75,7 @@ public class UseReadAndWriteLock {
 		System.out.println(t4.getName());
 		t1.start();
 		t3.start();
+		t4.start();
 	}
 
 }
