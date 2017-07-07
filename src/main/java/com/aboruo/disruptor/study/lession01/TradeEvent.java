@@ -8,7 +8,7 @@ import java.math.BigDecimal;
  * @author aboruo
  * @date 2017年7月6日 上午10:32:16
  */
-public class TrandeEvent {
+public class TradeEvent {
 	/** 订单id */
 	private String tradeId;
 	/** 订单名称 */
