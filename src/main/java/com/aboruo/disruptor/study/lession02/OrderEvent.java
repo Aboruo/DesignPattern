@@ -12,6 +12,13 @@ public class OrderEvent {
 	private String orderId;
 	private String orderDate;
 	private BigDecimal amount;
+	private String orderName;
+	public String getOrderName() {
+		return orderName;
+	}
+	public void setOrderName(String orderName) {
+		this.orderName = orderName;
+	}
 	/**
 	 * @return the orderId
 	 */

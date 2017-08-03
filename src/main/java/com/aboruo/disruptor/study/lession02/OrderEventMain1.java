@@ -18,7 +18,7 @@ import com.lmax.disruptor.YieldingWaitStrategy;
 public class OrderEventMain1 {
 
 	public static void main(String[] args) {
-		int BUFFER_SIZE = 1024;
+		int BUFFER_SIZE = 8;
 		int THREAD_NUMBERS = 4;
 		/* 
          * createSingleProducer创建一个单生产者的RingBuffer， 
@@ -32,7 +32,7 @@ public class OrderEventMain1 {
 		//创建SequenceBarrier
 		SequenceBarrier sequenceBarrier = ringBuffer.newBarrier();
 		//创建消息处理器
-		BatchEventProcessor<OrderEvent> transProcessor = new BatchEventProcessor<>(ringBuffer, sequenceBarrier, new OrderEventHandler("处理器1"));
+		BatchEventProcessor<OrderEvent> transProcessor = new BatchEventProcessor<OrderEvent>(ringBuffer, sequenceBarrier, new OrderEventHandler("处理器1"));
 		//把消費者的位置引用信息注入給生產者，如果只有一個消費者時這一步可以省略
 		ringBuffer.addGatingSequences(transProcessor.getSequence());
 		

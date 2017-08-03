@@ -13,13 +13,13 @@ import com.lmax.disruptor.dsl.Disruptor;
 public class OrderEventPublisher implements Runnable {
 	private final Disruptor<OrderEvent> disruptor;
 	private CountDownLatch countDownLatch;
-	private static int LOOP = 10;//模拟百万次交易的发生 
+//	private static int LOOP = 10;//模拟百万次交易的发生 
 	@Override
 	public void run() {
 		OrderEventTranslator orderEventTranslator = new OrderEventTranslator();
-		for(int i = 0; i < LOOP;i++){
+//		for(int i = 0; i < LOOP;i++){
 			this.disruptor.publishEvent(orderEventTranslator);
-		}
+//		}
 		countDownLatch.countDown();
 	}
 	public OrderEventPublisher(Disruptor<OrderEvent> disruptor, CountDownLatch countDownLatch) {

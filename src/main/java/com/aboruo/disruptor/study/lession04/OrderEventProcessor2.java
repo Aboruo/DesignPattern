@@ -38,6 +38,6 @@ public class OrderEventProcessor2 implements EventHandler<OrderEvent> {
 	 */
 	@Override
 	public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
-		System.out.println(this.processorName + "显示订单处理结果：" + event.getOrderId() + "|" + event.getOrderDate() + "|" + event.getAmount());
+		System.out.println(event + "|" + this.processorName + "显示订单处理结果：" + event.getOrderId() + "|" + event.getOrderDate() + "|" + event.getAmount());
 	}
 }

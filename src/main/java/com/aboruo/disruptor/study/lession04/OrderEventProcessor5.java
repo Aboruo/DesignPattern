@@ -11,9 +11,9 @@ import com.lmax.disruptor.EventHandler;
  * @author aboruo
  * @date 2017年7月6日 下午6:41:23
  */
-public class OrderEventProcessor3 implements EventHandler<OrderEvent> {
+public class OrderEventProcessor5 implements EventHandler<OrderEvent> {
 	private String processorName;
-	public OrderEventProcessor3(String processorName) {
+	public OrderEventProcessor5(String processorName) {
 		this.processorName = processorName;
 	}
 	/**
@@ -41,7 +41,7 @@ public class OrderEventProcessor3 implements EventHandler<OrderEvent> {
 	@Override
 	public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
 		BigDecimal amount = BigDecimal.valueOf(Math.random() * 1000);
-		System.out.println(this.processorName + "增加了订单金额为：" + amount);
-		event.setAmount(amount);
+		event.setAmount(event.getAmount().add(amount));
+		System.out.println(this.processorName + "为订单增加金额为：" + amount + "|增加后订单金额：" + event.getAmount().doubleValue());
 	}
 }
