@@ -21,7 +21,7 @@ public class OrderEventHandler implements EventHandler<OrderEvent> {
 	}
 	@Override
 	public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
-		System.out.println(this.handlerName + "处理了消息：" + event.getOrderId() + "|" + event.getOrderDate() + "|" + event.getAmount());
+		System.out.println(this.handlerName + "处理了消息：" +event + "|" + event.getOrderId() + "|" + event.getOrderDate() + "|" + event.getAmount());
 	}
 
 }

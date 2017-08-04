@@ -1,7 +1,5 @@
 package com.aboruo.disruptor.study.lession04;
 
-import java.math.BigDecimal;
-
 import com.aboruo.disruptor.study.lession02.OrderEvent;
 import com.lmax.disruptor.EventHandler;
 
@@ -11,9 +9,9 @@ import com.lmax.disruptor.EventHandler;
  * @author aboruo
  * @date 2017年7月6日 下午6:41:23
  */
-public class OrderEventProcessor3 implements EventHandler<OrderEvent> {
+public class OrderEventProcessor4 implements EventHandler<OrderEvent> {
 	private String processorName;
-	public OrderEventProcessor3(String processorName) {
+	public OrderEventProcessor4(String processorName) {
 		this.processorName = processorName;
 	}
 	/**
@@ -40,8 +38,8 @@ public class OrderEventProcessor3 implements EventHandler<OrderEvent> {
 	 */
 	@Override
 	public void onEvent(OrderEvent event, long sequence, boolean endOfBatch) throws Exception {
-		BigDecimal amount = BigDecimal.valueOf(Math.random() * 1000);
-		System.out.println(this.processorName + "增加了订单金额为：" + amount);
-		event.setAmount(amount);
+		String orderName = "订单-" + event.getOrderId();
+		System.out.println(this.processorName + "设定了订单名称为：" + orderName);
+		event.setOrderName(orderName);
 	}
 }

@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
+Build-Jdk: 1.7.0_80
 Built-By: aboruo
-Build-Jdk: 1.8.0_144
+>>>>>>> origin/develop
 Created-By: Maven Integration for Eclipse
 
